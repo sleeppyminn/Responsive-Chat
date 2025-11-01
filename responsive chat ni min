@@ -1,13 +1,27 @@
-def get_response(user_input):
-    if "hello" in user_input: return "HELLOOOOOOO POOOOOOO!!"
-    if "sino ako" in user_input: return "mamaw mag programming dba?"
-    if "bye" in user_input: return "iwan ako tangina"
-    return "di kita maintindihan gago ka"
+#chat bot program in min v2
+
+#its an responsive chat ai that only response in hello, sino ako, and bye.
+def get_response(user):
+    if "hello" in user:  # eto ung pagtype natin as a user sa ai
+        return "Hello there!"  # eto ung isasagot ng ai or ung responsive bot natin kasi eto ung prinogram natin
+    if "sino ako" in user:
+        return "You are a great programming student!"
+    if "bye" in user:
+        return "Goodbye! Have a nice day!"
+    return "Sorry, I don't understand." # eto ung naglagay tayo ng wala sa tatlo ung sinabi natin, ayan ung sasabihin nya.
+
 def chat():
-    print("welcome kapatid, Type 'bye' to exit.")
+    print("Welcome! Type 'bye' to exit.")
+    
     while True:
-        user_input = input("You: ")
-        response = get_response(user_input.lower())
+        user = input("You: ")
+        response = get_response(user.lower()) # eto ung kpg ung binigay mo is uppercase ay magiging lowercase sya
         print(f"AI: {response}")
-        if "bye" in user_input: break
-if __name__ == "__main__": chat()
+
+        # End conversation if user says bye
+        if "bye" in user.lower():
+            break
+
+if __name__ == "__main__":
+    chat() # eto ung pag start ng responsive chat bot natin
+# if it cause error like it goes saying ""Sorry, I don't understand." kill the terminal and run it again.
